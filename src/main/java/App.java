@@ -83,8 +83,9 @@ public class App {
         });new HandlebarsTemplateEngine();
 
         get("/success", (request, response) -> {
-            Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model, "success.hbs");
+                    Map<String, Object> model = new HashMap<>();
+                    return new ModelAndView(model, "success.hbs");
+                });
         get("/bugs/:id/delete", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             bugDao.findById(parseInt(request.params(":id"))).deleteById();
